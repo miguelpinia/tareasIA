@@ -201,3 +201,11 @@ pareja(X, Y) :- padre(Z, X), madre(Z, Y).
 % %@ X = lisa,                %
 % %@ Y = bart.                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% Ejercicio 3 %
+%%%%%%%%%%%%%%%
+
+cuenta([], 0).
+cuenta([_|T], Z) :- cuenta(T, N), Z is 1 + N.
+%:- cuenta([a,b,e,j,a], X).
