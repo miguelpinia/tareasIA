@@ -209,3 +209,13 @@ pareja(X, Y) :- padre(Z, X), madre(Z, Y).
 cuenta([], 0).
 cuenta([_|T], Z) :- cuenta(T, N), Z is 1 + N.
 %:- cuenta([a,b,e,j,a], X).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio 4.                               %
+% Encontrar el i-ésimo elemento de fibonacci %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+fibo(1, 0) :- !.
+fibo(2, 1) :- !.
+fibo(N, X) :- N1 is N - 1, N2 is N - 2, fibo(N1, Z), fibo(N2, W), X is Z + W.
+%:- fibo(7, X).
