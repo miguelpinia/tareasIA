@@ -1,0 +1,8 @@
+#+title: Tareas y proyectos de inteligencia artificial
+#+author: Miguel Piña
+#+date: [2017-08-30 mié 20:14]
+
+
+Repositorio que contiene las tareas y proyectos para la asignatura de
+Inteligencia Artificial en el posgrado de Ciencias e Ingeniería de la
+Computación.
