@@ -94,3 +94,110 @@ sobrino(X, Y) :- hombre(Y), madre(Y, W), hermana(X, W).
 % Ejercicio 1.- j)
 pareja(X, Y) :- padre(Z, X), madre(Z, Y).
 %:- pareja(X, Y).
+
+
+%%%%%%%%%%%%%%%
+% Ejercicio 2 %
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %:- mujer(X), hombre(Y).    %
+% %@ X = lisa,                %
+% %@ Y = bart ;               %
+% %@ X = lisa,                %
+% %@ Y = homero ;             %
+% %@ X = lisa,                %
+% %@ Y = abraham ;            %
+% %@ X = lisa,                %
+% %@ Y = herb ;               %
+% %@ X = lisa,                %
+% %@ Y = clancy ;             %
+% %@ X = maggie,              %
+% %@ Y = bart ;               %
+% %@ X = maggie,              %
+% %@ Y = homero ;             %
+% %@ X = maggie,              %
+% %@ Y = abraham ;            %
+% %@ X = maggie,              %
+% %@ Y = herb ;               %
+% %@ X = maggie,              %
+% %@ Y = clancy ;             %
+% %@ X = marge,               %
+% %@ Y = bart ;               %
+% %@ X = marge,               %
+% %@ Y = homero ;             %
+% %@ X = marge,               %
+% %@ Y = abraham ;            %
+% %@ X = marge,               %
+% %@ Y = herb ;               %
+% %@ X = marge,               %
+% %@ Y = clancy ;             %
+% %@ X = selma,               %
+% %@ Y = bart ;               %
+% %@ X = selma,               %
+% %@ Y = homero ;             %
+% %@ X = selma,               %
+% %@ Y = abraham ;            %
+% %@ X = selma,               %
+% %@ Y = herb ;               %
+% %@ X = selma,               %
+% %@ Y = clancy ;             %
+% %@ X = patty,               %
+% %@ Y = bart ;               %
+% %@ X = patty,               %
+% %@ Y = homero ;             %
+% %@ X = patty,               %
+% %@ Y = abraham ;            %
+% %@ X = patty,               %
+% %@ Y = herb ;               %
+% %@ X = patty,               %
+% %@ Y = clancy ;             %
+% %@ X = mona,                %
+% %@ Y = bart ;               %
+% %@ X = mona,                %
+% %@ Y = homero ;             %
+% %@ X = mona,                %
+% %@ Y = abraham ;            %
+% %@ X = mona,                %
+% %@ Y = herb ;               %
+% %@ X = mona,                %
+% %@ Y = clancy ;             %
+% %@ X = jackeline,           %
+% %@ Y = bart ;               %
+% %@ X = jackeline,           %
+% %@ Y = homero ;             %
+% %@ X = jackeline,           %
+% %@ Y = abraham ;            %
+% %@ X = jackeline,           %
+% %@ Y = herb ;               %
+% %@ X = jackeline,           %
+% %@ Y = clancy ;             %
+% %@ X = ling,                %
+% %@ Y = bart ;               %
+% %@ X = ling,                %
+% %@ Y = homero ;             %
+% %@ X = ling,                %
+% %@ Y = abraham ;            %
+% %@ X = ling,                %
+% %@ Y = herb ;               %
+% %@ X = ling,                %
+% %@ Y = clancy.              %
+%                             %
+%                             %
+% %:- mujer(X), !, hombre(Y). %
+% %@ X = lisa,                %
+% %@ Y = bart ;               %
+% %@ X = lisa,                %
+% %@ Y = homero ;             %
+% %@ X = lisa,                %
+% %@ Y = abraham ;            %
+% %@ X = lisa,                %
+% %@ Y = herb ;               %
+% %@ X = lisa,                %
+% %@ Y = clancy.              %
+%                             %
+%                             %
+% %:- mujer(X), hombre(Y), !. %
+% %@ X = lisa,                %
+% %@ Y = bart.                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
