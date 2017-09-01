@@ -219,3 +219,17 @@ fibo(1, 0) :- !.
 fibo(2, 1) :- !.
 fibo(N, X) :- N1 is N - 1, N2 is N - 2, fibo(N1, Z), fibo(N2, W), X is Z + W.
 %:- fibo(7, X).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio 5.                             %
+% Contar el número de veces que aparece un %
+% elemento en una lista.                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cuenta(_, [], 0) :- !.
+cuenta(X, [X|T], Y) :- cuenta(X, T, Z), Y is Z + 1.
+cuenta(X, [Z|T], Y) :- X \= Z, cuenta(X, T, Y).
+
+
+%:- cuenta(a, [b,a,n,a,n,a], X).
+%@ X = 3 ;
+%@ false.
