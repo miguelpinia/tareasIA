@@ -238,3 +238,13 @@ elimina(_, [], []) :- !.
 elimina(X, [X|Xs], Z) :- elimina(X, Xs, Z), !.
 elimina(X, [Y|Xs], [Y|Z]) :- X \= Y, elimina(X, Xs, Z).
 % :- elimina(a, [b,a,n,a,n,a], X).
+
+%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio 7.      %
+% Lista palindroma. %
+%%%%%%%%%%%%%%%%%%%%%
+reversa([], Z, Z).
+reversa([H|T],Z,Acc) :- reversa(T,Z,[H|Acc]).
+palindroma([]).
+palindroma(Y) :- reversa(Y, Z, []), Y = Z.
+%:- palindroma([r,e,c,o,n,o,c,e,r]).
