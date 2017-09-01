@@ -259,3 +259,35 @@ valor(_, [], _) :- !.
 valor(X, [X=>Y|_], Y) :- !.
 valor(X, [_=>_|Xs], W) :- valor(X, Xs, W).
 %:- valor(forma, [color=>azul , forma=>esferica , peso=>ligero , material=>plastico] , X).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio 9.                        %
+% Representación de un árbol binario, %
+% más recorridos en preorden, inorden %
+% y postorden                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+esArbolBinario(nil).            % La raíz vacía es AB
+esArbolBinario(nodo(Izq, _, Der)) :- esArbolBinario(Izq), esArbolBinario(Der).
+%:- esArbolBinario(nodo(nodo(nodo(nil, 7, nil), 6, nodo(nil, 5, nil)), 1, nodo(nodo(nil, 3, nil), 2, nil))).
+
+preorden(nil) :- !.
+preorden(nodo(I, X, D)) :- esArbolBinario(I), esArbolBinario(D), write(X), tab(3), preorden(I), preorden(D).
+%:- preorden(nodo(nodo(nodo(nil, 7, nil), 6, nodo(nil, 5, nil)), 1, nodo(nodo(nil, 3, nil), 2, nil))).
+%@ 1   6   7   5   2   3
+%@ true.
+
+
+inorden(nil) :- !.
+inorden(nodo(I,X,D)) :- esArbolBinario(I), esArbolBinario(D), inorden(I), write(X), tab(3), inorden(D).
+%:- inorden(nodo(nodo(nodo(nil, 7, nil), 6, nodo(nil, 5, nil)), 1, nodo(nodo(nil, 3, nil), 2, nil))).
+%@ 7   6   5   1   3   2
+%@ true.
+
+
+postorden(nil) :- !.
+postorden(nodo(I,X,D)) :- esArbolBinario(I), esArbolBinario(D), postorden(I), postorden(D), write(X), tab(3).
+%:- postorden(nodo(nodo(nodo(nil, 7, nil), 6, nodo(nil, 5, nil)), 1, nodo(nodo(nil, 3, nil), 2, nil))).
+%@ 7   5   6   3   2   1
+%@ true.
