@@ -248,3 +248,14 @@ reversa([H|T],Z,Acc) :- reversa(T,Z,[H|Acc]).
 palindroma([]).
 palindroma(Y) :- reversa(Y, Z, []), Y = Z.
 %:- palindroma([r,e,c,o,n,o,c,e,r]).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio 8.               %
+% Obtener valor de una lista %
+% atributo-valor.            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+:- op(15,xfx,'=>').
+valor(_, [], _) :- !.
+valor(X, [X=>Y|_], Y) :- !.
+valor(X, [_=>_|Xs], W) :- valor(X, Xs, W).
+%:- valor(forma, [color=>azul , forma=>esferica , peso=>ligero , material=>plastico] , X).
